@@ -9,7 +9,7 @@ bot.on('message', message => {
     const [command, ...args] = message.content.split(' ');
 
   if(message.content.startsWith('!temps')){
-    fetch(`https://api-ratp.pierre-grimaud.fr/v4/schedules/metros/${args[0]}/${args[1]}/${args[2]}`)
+    fetch(`https://api-ratp.pierre-grimaud.fr/v4/schedules/${args[0]}/${args[1]}/${args[2]}/${args[3]}`)
     .then(response => response.json())
     
     .then(data => {
@@ -19,7 +19,7 @@ bot.on('message', message => {
         const version = data._metadata.version;
 
         const embed = new MessageEmbed()
-            .setTitle(`Les prochains métros de la ligne ${args[0]}`)
+            .setTitle(`Les prochains ${args[0]} de la ligne ${args[1]}`)
             .setFooter(`Informations demandées à ${date}, \r${call}, ${version}`)
             .setColor('RANDOM')
 
