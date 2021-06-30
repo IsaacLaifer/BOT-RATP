@@ -56,27 +56,12 @@ bot.on('message', message => {
      fetch(`https://api-ratp.pierre-grimaud.fr/v4/lines/${args[0]}`)
      .then(response => response.json())
      .then(data =>{
-         switch (args[0]){
-             case 'metros':
-                var ligne = data.result.metros;
-                break;
-             case 'rers':
-                 var ligne = data.result.rers;
-                 break;
-             case 'tramways':
-                 var ligne = data.result.tramways;
-                 break;
-             case 'buses':
-                 var ligne = data.result.buses;
-                 break;
-             case 'noctiliens':
-                 var ligne = data.result.noctiliens
-                 break;
-         }
+        const transport = args[0]
+        const ligne = data.result[transport];
         const embed = new MessageEmbed()
-        .setTitle(`Les lignes possible pour le transport : ${args[0]} sont :`)
+        .setTitle(`Les lignes possible pour le transport : ${transport} sont :`)
         .setColor('RANDOM')
-        ligne.slice(0,25).forEach(element =>{
+        ligne.slice(0,50).forEach(element =>{
             embed.addFields({
                 name: element.name,
                 value: element.directions,
@@ -129,5 +114,3 @@ bot.on('message', message => {
     })
  }
 })
-
-bot.login('')
