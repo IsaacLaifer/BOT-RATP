@@ -19,7 +19,7 @@ The installation is very simple, you just have to install 2 libraries :
 ## Use 
 
 You can use 5 different commands : 
-- !temps + type + code + station + way   *A / R or A%2BR*
+- !temps + type + code + station + way   *(A / R or A%2BR)*
 - !destination + type + code
 - !ligne + type 
 - !stations +  type + code
