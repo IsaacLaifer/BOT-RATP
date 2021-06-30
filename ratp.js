@@ -79,7 +79,7 @@ bot.on('message', message => {
         var i = 0;
         const stations = data.result.stations;
         const embed = new MessageEmbed()
-        .setTitle(`Les stations sur du  ${args[0]} de la ligne ${args[1]} de la direction ${args[2]} sont :`)
+        .setTitle(`Les stations du  ${args[0]} de la ligne ${args[1]} de la direction ${args[2]} sont :`)
         .setColor('RANDOM')
         stations.forEach(element =>{
              i = i+1;
