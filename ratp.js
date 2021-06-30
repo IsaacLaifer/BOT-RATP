@@ -130,4 +130,4 @@ bot.on('message', message => {
  }
 })
 
-bot.login('ODM0NDQ0MzIwOTc1MjI0ODcy.YIA-1Q.JuyHgSTc3QrQl5uDuvA8HYo2D34')
+bot.login('')
